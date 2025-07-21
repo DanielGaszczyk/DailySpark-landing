@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tagi -->
+    <title>DailySpark | Aplikacja do Walki z Prokrastynacją - 15 Minut do Sukcesu</title>
+    <meta name="description" content="DailySpark to rewolucyjna aplikacja wykorzystująca AI do podziału wielkich celów na 15-minutowe zadania. Pokonaj prokrastynację i zacznij realizować marzenia małymi krokami. Dołącz do testów beta!">
+    <meta name="keywords" content="produktywność, aplikacja motywacyjna, nawyki, cele życiowe, prokrastynacja, motywacja, AI, sztuczna inteligencja, gamifikacja, DailySpark, startup, zarządzanie czasem, efektywność, rozwój osobisty">
+    <meta name="author" content="Zespół DailySpark">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://dailyspark.app">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="DailySpark - Aplikacja Która Zamienia Marzenia w Rzeczywistość">
+    <meta property="og:description" content="Jedyna aplikacja wykorzystująca AI do podziału celów na proste 15-minutowe zadania. Poczuj moc małych zwycięstw. Testy beta już wkrótce!">
+    <meta property="og:image" content="https://dailyspark.app/photo1.jpg">
+    <meta property="og:image:alt" content="Interfejs aplikacji DailySpark pokazujący system 15-minutowych zadań">
+    <meta property="og:url" content="https://dailyspark.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="DailySpark">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DailySpark - Wielkie Marzenia, Małe Kroki">
+    <meta name="twitter:description" content="Aplikacja AI dzieląca cele na 15-minutowe zadania. Dołącz do testów beta!">
+    <meta name="twitter:image" content="https://dailyspark.app/photo1.jpg">
+    <meta name="twitter:image:alt" content="Aplikacja DailySpark - interfejs użytkownika">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DailySpark",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Android, iOS",
+      "description": "Aplikacja motywacyjna wykorzystująca AI do podziału celów na 15-minutowe zadania",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PLN",
+        "description": "Test beta - 6 miesięcy premium gratis"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      }
+    }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+        }
+        
+        .hero-glow {
+            box-shadow: 0 0 60px rgba(16, 185, 129, 0.4), 0 0 100px rgba(234, 179, 8, 0.25);
+        }
+        
+        .cta-button-glow {
+            animation: pulse-glow 2.5s infinite ease-in-out;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 12px rgba(16, 185, 129, 0.5), 0 0 22px rgba(16, 185, 129, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 22px rgba(16, 185, 129, 0.8), 0 0 45px rgba(16, 185, 129, 0.6);
+            }
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .phone-mockup {
+            position: relative;
+            max-width: 300px;
+            margin: auto;
+            border: 12px solid #2d3748;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: #1a202c;
+        }
+        
+        .phone-mockup-screen {
+            overflow: hidden;
+            border-radius: 28px;
+        }
+        
+        .phone-mockup-screen img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="dark-mode text-gray-200">
+    <!-- Header -->
+    <header class="py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 bg-gray-900/50 backdrop-blur-lg z-40">
+        <div class="text-2xl font-bold tracking-tighter text-white">
+            Daily<span class="text-emerald-400">Spark</span> ⚡️
+        </div>
+        <a href="https://forms.gle/JT3x3oihAVQpCpaS9" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="hidden sm:block bg-white text-gray-900 font-semibold py-2 px-5 rounded-full hover:bg-gray-200 transition-colors">
+            Dołącz do Listy
+        </a>
+    </header>
+    
+    <!-- Hero Section -->
+    <main class="overflow-x-hidden">
+        <section class="text-center py-20 md:py-32 px-4">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-white leading-tight scroll-animate">
+                Wielkie Marzenia. <br class="md:hidden"> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
+                    Małe, Uzależniające Kroki.
+                </span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-8 scroll-animate" style="transition-delay: 100ms;">
+                DailySpark to jedyna aplikacja, która dzieli przytłaczające cele na 15-minutowe zadania.
+                Koniec z paraliżem decyzyjnym. Czas zacząć działać.
+            </p>
+            <div class="scroll-animate" style="transition-delay: 200ms;">
+                <a href="https://forms.gle/JT3x3oihAVQpCpaS9" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="inline-block bg-emerald-500 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-emerald-600 transition-all duration-300 cta-button-glow">
+                    🚀 Zdobądź wczesny dostęp
+                </a>
+            </div>
+            
+            <div class="mt-20 relative scroll-animate" style="transition-delay: 300ms;">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-orange-400 rounded-full blur-3xl opacity-30 hero-glow"></div>
+                <div class="phone-mockup">
+                    <div class="phone-mockup-screen">
+                        <img src="photo1.jpg" 
+                             alt="Interfejs aplikacji DailySpark pokazujący system 15-minutowych zadań" 
+                             width="300" 
+                             height="650"
+                             loading="lazy"
+                             onerror="this.onerror=null;this.src='https://placehold.co/300x650/111827/FFFFFF?text=DailySpark+App';">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Feature Section -->
+        <section class="py-20 bg-gray-800/50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 scroll-animate">
+                    To nie jest kolejna aplikacja motywacyjna.
+                </h2>
+                <p class="text-gray-400 text-lg mb-12 scroll-animate" style="transition-delay: 100ms;">
+                    To Twój osobisty trener do walki z odkładaniem na później.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <article class="bg-gray-900 p-6 rounded-2xl feature-card border border-gray-700 scroll-animate" style="transition-delay: 200ms;">
+                        <div class="text-3xl mb-4" role="img" aria-label="Ikona mózgu">🧠</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Inteligentny Podział Celów</h3>
+                        <p class="text-gray-400">
+                            Nie wiesz od czego zacząć? Nasze AI zamieni "założę firmę" na "przeczytaj 1 artykuł o biznesie" - pierwszy krok, który możesz zrobić już teraz.
+                        </p>
+                    </article>
+                    
+                    <article class="bg-gray-900 p-6 rounded-2xl feature-card border border-gray-700 scroll-animate" style="transition-delay: 300ms;">
+                        <div class="text-3xl mb-4" role="img" aria-label="Ikona trofeum">🏆</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Psychologia Małych Kroków</h3>
+                        <p class="text-gray-400">
+                            Zamiast poczucia winy dostaniesz dawkę satysfakcji. Każde 15-minutowe zadanie to zastrzyk motywacji i endorfin.
+                        </p>
+                    </article>
+                    
+                    <article class="bg-gray-900 p-6 rounded-2xl feature-card border border-gray-700 scroll-animate" style="transition-delay: 400ms;">
+                        <div class="text-3xl mb-4" role="img" aria-label="Ikona stopera">⏱️</div>
+                        <h3 class="text-xl font-bold text-white mb-2">System Pilnych Okien</h3>
+                        <p class="text-gray-400">
+                            Krótkie terminy na rozpoczęcie zadania tworzą zdrową presję. Koniec z wiecznym odkładaniem "na jutro".
+                        </p>
+                    </article>
+                    
+                    <article class="bg-gray-900 p-6 rounded-2xl feature-card border border-gray-700 scroll-animate" style="transition-delay: 500ms;">
+                        <div class="text-3xl mb-4" role="img" aria-label="Ikona płonącego serca">❤️‍🔥</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Serie Bez Stresu</h3>
+                        <p class="text-gray-400">
+                            Nagradzamy wysiłek, nie perfekcję. Nasze elastyczne serie wybaczają potknięcia i pomagają wrócić na właściwe tory.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How it works -->
+        <section class="py-24" aria-labelledby="how-it-works-heading">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-left scroll-animate">
+                    <span class="font-semibold text-emerald-400">JAK TO DZIAŁA?</span>
+                    <h2 id="how-it-works-heading" class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
+                        Od marzeń do działania w 3 krokach
+                    </h2>
+                    <ol class="space-y-4 text-gray-300 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-emerald-400 font-bold text-2xl mr-4">1.</span> 
+                            <div>
+                                <strong class="text-white">Podaj swój cel.</strong> 
+                                Napisać książkę, nauczyć się programować, schudnąć 10 kg - cokolwiek chcesz osiągnąć.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-400 font-bold text-2xl mr-4">2.</span> 
+                            <div>
+                                <strong class="text-white">AI tworzy Twój plan.</strong> 
+                                Otrzymujesz spersonalizowaną listę prostych, 15-minutowych zadań.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-400 font-bold text-2xl mr-4">3.</span> 
+                            <div>
+                                <strong class="text-white">Działaj w odpowiednim momencie.</strong> 
+                                Dostajesz powiadomienie z krótkim czasem na start. Poczuj adrenalinę działania!
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <aside class="bg-gray-800 rounded-2xl p-8 border border-gray-700 text-center scroll-animate" style="transition-delay: 150ms;">
+                    <p class="text-sm text-orange-400 font-bold tracking-widest">⚡️ CZAS NA DZIAŁANIE! ⚡️</p>
+                    <p class="text-white text-lg mt-2 mb-4">Twoje zadanie na teraz:</p>
+                    <div class="bg-gray-900 p-4 rounded-lg text-left mb-6">
+                        <p class="text-white font-semibold">
+                            Stwórz mapę myśli z 5 trendami w Twojej branży
+                        </p>
+                        <p class="text-sm text-gray-400">🕒 15 min &nbsp; ⭐ +10 pkt</p>
+                    </div>
+                    <p class="text-white mb-2">Możliwość rozpoczęcia kończy się za:</p>
+                    <div id="countdown-timer" class="text-4xl font-mono font-bold text-orange-400" aria-live="polite" aria-atomic="true">
+                        04:59
+                    </div>
+                </aside>
+            </div>
+        </section>
+        
+        <!-- Social Proof / Testimonials -->
+        <section class="py-20 bg-gray-800/50" aria-labelledby="testimonials-heading">
+            <div class="container mx-auto px-6 text-center">
+                <h2 id="testimonials-heading" class="text-3xl md:text-4xl font-bold text-white mb-12 scroll-animate">
+                    Stworzone dla Ambitnych Marzycieli
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <blockquote class="bg-gray-900 p-6 rounded-2xl border border-gray-700 scroll-animate" style="transition-delay: 100ms;">
+                        <p class="text-gray-300 mb-4">
+                            "Zawsze miałam wielkie plany, ale przytłaczała mnie ich skala. DailySpark pokazał mi, że mogę zacząć od małych kroków. To naprawdę działa!"
+                        </p>
+                        <footer class="flex items-center">
+                            <img src="https://placehold.co/40x40/4ADE80/111827?text=A" 
+                                 class="rounded-full mr-3" 
+                                 alt="Zdjęcie profilowe Anny K."
+                                 width="40"
+                                 height="40"
+                                 loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white not-italic">Anna K.</cite>
+                                <p class="text-sm text-gray-500">Dyrektor Kreatywna</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    
+                    <blockquote class="bg-gray-900 p-6 rounded-2xl border border-gray-700 scroll-animate" style="transition-delay: 200ms;">
+                        <p class="text-gray-300 mb-4">
+                            "Prowadzę startup i moja lista zadań jest nieskończona. Ta aplikacja nauczyła mnie skupiać się na jednej rzeczy naraz. Prawdziwy przełom."
+                        </p>
+                        <footer class="flex items-center">
+                            <img src="https://placehold.co/40x40/60A5FA/111827?text=M" 
+                                 class="rounded-full mr-3" 
+                                 alt="Zdjęcie profilowe Michała T."
+                                 width="40"
+                                 height="40"
+                                 loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white not-italic">Michał T.</cite>
+                                <p class="text-sm text-gray-500">CEO Startupu</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    
+                    <blockquote class="bg-gray-900 p-6 rounded-2xl border border-gray-700 scroll-animate" style="transition-delay: 300ms;">
+                        <p class="text-gray-300 mb-4">
+                            "Wypróbowałam dziesiątki aplikacji i metod. Timer w DailySpark to jedyne, co potrafi mnie zmobilizować do natychmiastowego działania."
+                        </p>
+                        <footer class="flex items-center">
+                            <img src="https://placehold.co/40x40/F97316/111827?text=K" 
+                                 class="rounded-full mr-3" 
+                                 alt="Zdjęcie profilowe Kasi W."
+                                 width="40"
+                                 height="40"
+                                 loading="lazy">
+                            <div>
+                                <cite class="font-bold text-white not-italic">Kasia W.</cite>
+                                <p class="text-sm text-gray-500">Freelancerka</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final CTA Section -->
+        <section class="py-24" aria-labelledby="final-cta-heading">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 id="final-cta-heading" class="text-3xl md:text-5xl font-black tracking-tighter text-white mb-4 scroll-animate">
+                    Gotowy na Prawdziwą Zmianę?
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl mb-8 scroll-animate" style="transition-delay: 100ms;">
+                    Przestań planować, zacznij działać. Dołącz do ekskluzywnej grupy beta testerów i jako pierwszy wypróbuj DailySpark. 
+                    W prezencie otrzymasz <strong class="text-emerald-400">6 miesięcy dostępu Premium całkowicie za darmo</strong>.
+                </p>
+                <div class="scroll-animate" style="transition-delay: 200ms;">
+                    <a href="https://forms.gle/JT3x3oihAVQpCpaS9" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-block bg-emerald-500 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-emerald-600 transition-all duration-300 cta-button-glow">
+                        🚀 Tak, chcę zmienić swoje życie!
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center py-8 px-6">
+        <p class="text-gray-500">&copy; 2024 DailySpark. Wszelkie prawa zastrzeżone.</p>
+        <p class="text-gray-600 text-sm mt-2">
+            Stworzone przez marzycieli, dla marzycieli.
+        </p>
+        <address class="text-gray-600 text-sm mt-4 not-italic">
+            <a href="mailto:kontakt@dailyspark.app" class="hover:text-emerald-400 transition-colors">
+                kontakt@dailyspark.app
+            </a>
+        </address>
+    </footer>
+    
+    <script>
+        // Prosty timer odliczający
+        const countdownElement = document.getElementById('countdown-timer');
+        if (countdownElement) {
+            let timeInSeconds = 299; // 4 min 59 sek
+            
+            setInterval(() => {
+                const minutes = Math.floor(timeInSeconds / 60).toString().padStart(2, '0');
+                const seconds = (timeInSeconds % 60).toString().padStart(2, '0');
+                countdownElement.textContent = `${minutes}:${seconds}`;
+                timeInSeconds--;
+                
+                if (timeInSeconds < 0) {
+                    timeInSeconds = 299; // Reset timera
+                }
+            }, 1000);
+        }
+        
+        // Animacje przy przewijaniu
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Optymalizacja wydajności - preload obrazka
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = 'photo1.jpg';
+        document.head.appendChild(link);
+    </script>
+</body>
+</html>
